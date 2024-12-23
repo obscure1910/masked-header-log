@@ -1,0 +1,20 @@
+---
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: Extension
+metadata:
+  labels:
+    title: Masked Header Log
+    category: Custom
+    metadata/interfaceScope: api,resource
+spec:
+  extends:
+    - name: extension-definition
+      namespace: default
+  properties:
+    header:
+        type: array
+        items:
+            type: string
+        description: Header names that are to be masked in the request as well as in the response.
+  required:
+    - header
